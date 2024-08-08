@@ -1,0 +1,176 @@
+*{
+    margin: 0;padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    position: relative;
+    min-height: 100vh;
+    background: #060606;
+}
+
+.container h1{
+    font-size: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+    padding: 15px;
+    color: #333;
+    text-align: center;
+    text-transform: capitalize;
+}
+.container .image-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 10px;
+}
+.container .image-container .image{
+    height: 250px;
+    width: 400px;
+    border: 10px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,.1);
+    overflow: hidden;
+    cursor: pointer;
+}
+.container .image-container .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: .2s linear;
+}
+.container .image-container .image:hover img{
+    transform: scale(1.1);
+}
+.container .popup-image{
+    position:fixed;
+    top:0; left:0;
+    background:rgba(0,0,0,.9);
+    height:100%;
+    width:100%;
+    z-index:100;
+    display: none;
+}
+.container .popup-image span{
+    position: absolute;
+    top: 0; right: 10px;
+    font-size: 60px;
+    font-weight: bolder;
+    color: #fff;
+    cursor: pointer;
+    z-index: 100;      
+}
+.container .popup-image img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 5px solid #fff;
+    border-radius: 5px;
+    width: 750px;
+    object-fit: cover;
+}
+.body {
+    background-color: black;
+}
+@media(max-width:768px){
+    .container .popup-image img{
+        width: 95%;
+    }
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f2f2f2;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+
+    margin: auto;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: auto;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.image {
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.image:hover {
+    transform: scale(1.05);
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.popup-image {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 10%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup-image img {
+    max-width: 150%;
+    max-height: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup-image span {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+}

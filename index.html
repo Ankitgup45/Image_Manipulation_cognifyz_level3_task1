@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="color: aqua;"><b>Image Gallery</b></h1>
+
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+            <div class="slide"><img src="web2.jpg" alt="Slide 1"></div>
+            <div class="slide"><img src="web3.png" alt="Slide 2"></div>
+            <div class="slide"><img src="web5.png" alt="Slide 3"></div>
+            <div class="slide"><img src="web4.jpg" alt="Slide 4"></div>
+        </div>
+    <div class="container">
+        <h1 style="color: aqua;"><b>Image Gallery<b></h1>
+
+        <div class="image-container">
+            <div class="image"><img src="web6.png" alt=""></div>
+            <div class="image"><img src="web7.jpg" alt=""></div>
+            <div class="image"><img src="web8.jpg" alt=""></div>
+            <div class="image"><img src="web9.jpeg" alt=""></div>
+            <div class="image"><img src="web10.png" alt=""></div>
+            <div class="image"><img src="web11.jpg" alt=""></div>
+            <div class="image"><img src="web12.jpg" alt=""></div>
+            <div class="image"><img src="web13.jpg" alt=""></div>
+            <div class="image"><img src="web2.jpg" alt=""></div>
+            <div class="image"><img src="web3.png" alt=""></div>
+            <div class="image"><img src="web4.jpg" alt=""></div>
+            <div class="image"><img src="web5.png" alt=""></div>
+
+
+        </div>
+        <div class="popup-image">
+            <span>&times;</span>
+            <img src="https://github.com/adminparidhi/image-gallery-project/blob/main/images/image1.jpg?raw=true" alt="">
+        </div>
+    </div>
+    <script>
+        // Slideshow JavaScript
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slideshow-container .slide');
+        function showSlides() {
+            slides.forEach((slide, index) => {
+                slide.style.display = 'none';
+            });
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = 'block';
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+        showSlides();
+
+        // Image popup JavaScript
+        document.querySelectorAll('.image-container img').forEach(image => {
+            image.onclick = () => {
+                document.querySelector('.popup-image').style.display = 'block';
+                document.querySelector('.popup-image img').src = image.getAttribute('src');
+            }
+        });
+
+        document.querySelector('.popup-image span').onclick = () => {
+            document.querySelector('.popup-image').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
